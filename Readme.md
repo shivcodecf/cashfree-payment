@@ -187,6 +187,42 @@ Expected response:
 }
 ```
 
+
+## Database Schema and Migrations
+
+This project uses PostgreSQL through Supabase and Prisma ORM.
+
+### Database Models
+
+**Payment**
+
+Stores payment orders and their lifecycle status, including the student ID, internal order ID, Cashfree order ID, amount, currency, payment status, and Cashfree payment ID.
+
+**WebhookEvent**
+
+Stores incoming webhook event records, including a unique event key, event type, processing status, timestamps, and an optional relationship to a payment.
+
+### Schema Location
+
+- Prisma schema: `prisma/schema.prisma`
+- Database migrations: `prisma/migrations/`
+
+### Apply Migrations
+
+Generate the Prisma client:
+
+```bash
+npx prisma generate
+```
+
+Apply existing migrations:
+
+```bash
+npx prisma migrate deploy
+```
+
+
+
 ## API Endpoints
 
 ### 1. Create Payment
@@ -344,3 +380,37 @@ npm start
 ## License
 
 This project was created as a backend payment integration assessment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
